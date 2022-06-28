@@ -9,4 +9,6 @@
 
 .stopwatchBody {
 	align-self: center;
+	display: flex;
+	justify-content: center;
 }
