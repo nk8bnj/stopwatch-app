@@ -1,0 +1,41 @@
+.display {
+	display: flex;
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 18px;
+}
+
+.displayNumbers {
+	font-size: 12px;
+}
+
+.numbers {
+	font-size: 92px;
+}
+
+.title {
+	font-size: 12px;
+	color: rgb(176, 175, 175);
+	text-align: center;
+}
+
+.dots {
+	font-size: 82px;
+	align-self: center;
+}
+
+.milliseconds {
+	color: rgb(255, 0, 0);
+}
+
+.seconds {
+	color: rgb(255, 170, 0);
+}
+
+.minutes {
+	color: rgb(20, 211, 30);
+}
+
+.hours {
+	color: rgb(11, 125, 239);
+}
