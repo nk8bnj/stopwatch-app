@@ -39,3 +39,9 @@
 .hours {
 	color: rgb(11, 125, 239);
 }
+
+@media screen and (max-width: 500px) {
+	.numbers {
+		font-size: 76px;
+	}
+}
