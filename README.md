@@ -1,3 +1,3 @@
-# Try out Stopwatch App
+# Tell me the truth App
 
-[Click here](https://8bitnikita.github.io/stopwatch-app/) to open the application.
+[Click here](https://8bitnikita.github.io/tell-me-the-truth/) to open the application.
