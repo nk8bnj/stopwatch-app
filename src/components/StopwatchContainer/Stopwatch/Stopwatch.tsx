@@ -25,6 +25,13 @@ export const Stopwatch: React.FC<StopwatchType> = (props) => {
 	let [min, setMin] = useState(0);
 	let [hour, setHour] = useState(0);
 
+	const twoDigitNumber = (
+		number: number,
+		timeChange: (number: number | string) => void
+	) => {
+		number < 10 ? timeChange("0" + number) : timeChange(number);
+	};
+
 	const onStartHandler = () => {
 		if (!props.isRunning) {
 			props.runningChange(true);
@@ -32,36 +39,27 @@ export const Stopwatch: React.FC<StopwatchType> = (props) => {
 				setInterval(() => {
 					//MILLISECONDS
 					setMlsec(++mlsec);
-					mlsec < 10
-						? props.millisecondsChange("0" + mlsec)
-						: props.millisecondsChange(mlsec);
+					twoDigitNumber(mlsec, props.millisecondsChange);
 					if (mlsec === 99) {
 						mlsec = 0;
 
 						//SECONDS
 						setSec(++sec);
-						sec < 10
-							? props.secondsChange("0" + sec)
-							: props.secondsChange(sec);
-
+						twoDigitNumber(sec, props.secondsChange);
 						if (sec === 60) {
 							sec = 0;
 							props.secondsChange("0" + sec);
 
 							// MINUTES
 							setMin(++min);
-							min < 10
-								? props.minutesChange("0" + min)
-								: props.minutesChange(min);
+							twoDigitNumber(min, props.minutesChange);
 							if (min === 60) {
 								min = 0;
 								props.minutesChange("0" + min);
 
 								// HOURS
 								setHour(++hour);
-								hour < 10
-									? props.hoursChange("0" + hour)
-									: props.hoursChange(hour);
+								twoDigitNumber(hour, props.hoursChange);
 							}
 						}
 					}
