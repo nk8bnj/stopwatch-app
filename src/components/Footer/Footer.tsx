@@ -1,7 +1,7 @@
-import styles from "./Footer.module.css";
-import github from "../../images/github.svg";
-import linkedin from "../../images/linkedin.svg";
-import gmail from "../../images/gmail.svg";
+import styles from './Footer.module.scss';
+import github from '../../images/github.svg';
+import linkedin from '../../images/linkedin.svg';
+import gmail from '../../images/gmail.svg';
 
 export const Footer = () => {
 	return (

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import './utils/functions.scss';
+
+.container {
+	/* max-width: 1200px;
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 100vw; */
+
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.stopwatchBody {
+		width: 100%;
+		align-self: center;
+		display: flex;
+		justify-content: center;
+	}
+}

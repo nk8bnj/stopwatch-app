@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Buttons } from "../../Buttons/Buttons";
-import { Display } from "../../Display/Display";
-import styles from "./Stopwatch.module.css";
+import { useState } from 'react';
+import { Buttons } from '../../Buttons/Buttons';
+import { Display } from '../../Display/Display';
+import styles from './Stopwatch.module.scss';
 
 type StopwatchType = {
 	hours: any;
@@ -29,7 +29,7 @@ export const Stopwatch: React.FC<StopwatchType> = (props) => {
 		number: number,
 		timeChange: (number: number | string) => void
 	) => {
-		number < 10 ? timeChange("0" + number) : timeChange(number);
+		number < 10 ? timeChange('0' + number) : timeChange(number);
 	};
 
 	const onStartHandler = () => {
@@ -48,14 +48,14 @@ export const Stopwatch: React.FC<StopwatchType> = (props) => {
 						twoDigitNumber(sec, props.secondsChange);
 						if (sec === 60) {
 							sec = 0;
-							props.secondsChange("0" + sec);
+							props.secondsChange('0' + sec);
 
 							// MINUTES
 							setMin(++min);
 							twoDigitNumber(min, props.minutesChange);
 							if (min === 60) {
 								min = 0;
-								props.minutesChange("0" + min);
+								props.minutesChange('0' + min);
 
 								// HOURS
 								setHour(++hour);
@@ -78,10 +78,10 @@ export const Stopwatch: React.FC<StopwatchType> = (props) => {
 		setSec(0);
 		setMin(0);
 		setHour(0);
-		props.millisecondsChange("0" + 0);
-		props.secondsChange("0" + 0);
-		props.minutesChange("0" + 0);
-		props.hoursChange("0" + 0);
+		props.millisecondsChange('0' + 0);
+		props.secondsChange('0' + 0);
+		props.minutesChange('0' + 0);
+		props.hoursChange('0' + 0);
 	};
 
 	return (

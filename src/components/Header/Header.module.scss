@@ -1,0 +1,54 @@
+@import './../../utils/functions.scss';
+
+.container {
+	height: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	border-bottom: 2px solid #f8f6f6;
+	text-align: center;
+	display: grid;
+
+	.header {
+		align-self: center;
+		font-size: vw(34);
+		padding: 20px;
+
+		.react {
+			color: #00d8ff;
+		}
+
+		.redux {
+			color: #764abc;
+		}
+
+		.title {
+			display: inline-block;
+		}
+	}
+
+	img {
+		width: vw(24);
+		height: vw(24);
+	}
+}
+
+@media (max-width: 800px) {
+	.container {
+		.header {
+			padding: 10px;
+			// font-size: vw(44);
+			font-size: 26px;
+
+			.title {
+				display: block;
+			}
+
+			img {
+				// width: vw(32);
+				width: 19px;
+				// height: vw(32);
+				height: 19px;
+			}
+		}
+	}
+}
