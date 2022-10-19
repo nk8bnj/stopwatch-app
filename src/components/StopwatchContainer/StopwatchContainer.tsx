@@ -1,12 +1,21 @@
-import { connect } from "react-redux";
-import { millisecondsChangeAC } from "../../Reducer/stopwatchReducer";
-import { secondsChangeAC } from "../../Reducer/stopwatchReducer";
-import { minutesChangeAC } from "../../Reducer/stopwatchReducer";
-import { hoursChangeAC } from "../../Reducer/stopwatchReducer";
-import { runningAC } from "../../Reducer/stopwatchReducer";
-import { startTimerAC } from "../../Reducer/stopwatchReducer";
-import { DispatchType, StateType } from "../../store/reduxStore";
-import { Stopwatch } from "./Stopwatch/Stopwatch";
+import React from 'react';
+import { connect } from 'react-redux';
+import { millisecondsChange } from '../../Reducer/stopwatchReducer';
+import { secondsChange } from '../../Reducer/stopwatchReducer';
+import { minutesChange } from '../../Reducer/stopwatchReducer';
+import { hoursChange } from '../../Reducer/stopwatchReducer';
+import { isRunningSwitcher } from '../../Reducer/stopwatchReducer';
+import { StateType } from '../../store/reduxStore';
+import Stopwatch from './Stopwatch/Stopwatch';
+import { IStopwatch } from './StopwatchType';
+
+const StopwatchContainer: React.FC<IStopwatch> = (props) => {
+	return (
+		<div>
+			<Stopwatch {...props} />
+		</div>
+	);
+};
 
 const mapStateToProps = (state: StateType) => {
 	return {
@@ -15,33 +24,13 @@ const mapStateToProps = (state: StateType) => {
 		seconds: state.stopwatch.seconds,
 		milliseconds: state.stopwatch.milliseconds,
 		isRunning: state.stopwatch.isRunning,
-		startTimer: state.stopwatch.startTimer,
-	};
-};
-const mapDispatchToProps = (dispatch: DispatchType) => {
-	return {
-		millisecondsChange: (milliseconds: any) => {
-			dispatch(millisecondsChangeAC(milliseconds));
-		},
-		secondsChange: (seconds: any) => {
-			dispatch(secondsChangeAC(seconds));
-		},
-		minutesChange: (minutes: any) => {
-			dispatch(minutesChangeAC(minutes));
-		},
-		hoursChange: (hours: any) => {
-			dispatch(hoursChangeAC(hours));
-		},
-		runningChange: (isRunning: any) => {
-			dispatch(runningAC(isRunning));
-		},
-		startTimerChange: (startTimer: any) => {
-			dispatch(startTimerAC(startTimer));
-		},
 	};
 };
 
-export const StopwatchContainer = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Stopwatch);
+export default connect(mapStateToProps, {
+	millisecondsChange,
+	secondsChange,
+	minutesChange,
+	hoursChange,
+	isRunningSwitcher,
+})(StopwatchContainer);

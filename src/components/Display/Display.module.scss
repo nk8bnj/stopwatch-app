@@ -1,0 +1,56 @@
+@import '../../utils/functions';
+@import '../../utils/variables';
+
+.container {
+	display: flex;
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 18px;
+
+	.numbers {
+		font-size: vw(92);
+	}
+
+	.title {
+		font-size: vw(12);
+		color: var(--title-color);
+		text-align: center;
+	}
+
+	.dots {
+		font-size: vw(82);
+		align-self: center;
+	}
+
+	.milliseconds {
+		color: var(--milliseconds-color);
+	}
+
+	.seconds {
+		color: var(--seconds-color);
+	}
+
+	.minutes {
+		color: var(--minutes-color);
+	}
+
+	.hours {
+		color: var(--hours-color);
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		.numbers {
+			font-size: 62px;
+		}
+
+		.title {
+			font-size: 8px;
+		}
+
+		.dots {
+			font-size: 55px;
+		}
+	}
+}

@@ -1,7 +1,7 @@
 import './App.scss';
-import { Footer } from './components/Footer/Footer';
-import { Header } from './components/Header/Header';
-import { StopwatchContainer } from './components/StopwatchContainer/StopwatchContainer';
+import Footer from './../Footer/Footer';
+import Header from './../Header/Header';
+import StopwatchContainer from './../StopwatchContainer/StopwatchContainer';
 
 function App() {
 	return (

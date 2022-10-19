@@ -1,9 +1,10 @@
-@import './../../utils/functions.scss';
+@import '../../utils/functions';
+@import '../../utils/variables';
 
 .container {
-	max-width: 1200px;
+	max-width: 1350px;
 	margin: 0 auto;
-	border-bottom: 2px solid #f8f6f6;
+	border-bottom: 2px solid var(--border-color);
 	text-align: center;
 	display: grid;
 
@@ -13,11 +14,11 @@
 		padding: 20px;
 
 		.react {
-			color: #00d8ff;
+			color: var(--react-color);
 		}
 
 		.redux {
-			color: #764abc;
+			color: var(--redux-color);
 		}
 
 		.title {
@@ -31,11 +32,10 @@
 	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 524px) {
 	.container {
 		.header {
 			padding: 10px;
-			// font-size: vw(44);
 			font-size: 26px;
 
 			.title {
@@ -43,9 +43,7 @@
 			}
 
 			img {
-				// width: vw(32);
 				width: 19px;
-				// height: vw(32);
 				height: 19px;
 			}
 		}

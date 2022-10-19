@@ -1,30 +1,32 @@
-import styles from "./Buttons.module.css";
+import styles from './Buttons.module.scss';
 
-type ButtonsType = {
+interface IButtons {
 	onStartHandler: () => void;
 	onResetHandler: () => void;
 	isRunning: boolean;
-};
+}
 
-export const Buttons: React.FC<ButtonsType> = (props) => {
+const Buttons: React.FC<IButtons> = (props) => {
 	return (
-		<div className={styles.buttons}>
+		<div className={styles.container}>
 			<button
 				onClick={props.onStartHandler}
 				className={
 					props.isRunning
-						? styles.button + " " + styles.buttonPause
+						? styles.button + ' ' + styles.buttonPause
 						: styles.button
 				}
 			>
-				{props.isRunning ? "PAUSE" : "START"}
+				{props.isRunning ? 'PAUSE' : 'START'}
 			</button>
 			<button
 				onClick={props.onResetHandler}
-				className={styles.button + " " + styles.buttonReset}
+				className={styles.button + ' ' + styles.buttonReset}
 			>
 				RESET
 			</button>
 		</div>
 	);
 };
+
+export default Buttons;

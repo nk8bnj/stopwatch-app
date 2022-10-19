@@ -1,29 +1,17 @@
-import { useState } from 'react';
-import { Buttons } from '../../Buttons/Buttons';
-import { Display } from '../../Display/Display';
+import React, { useState } from 'react';
+import Buttons from '../../Buttons/Buttons';
+import Display from '../../Display/Display';
+import { IStopwatch } from '../StopwatchType';
 import styles from './Stopwatch.module.scss';
 
-type StopwatchType = {
-	hours: any;
-	minutes: any;
-	seconds: any;
-	milliseconds: any;
-	isRunning: boolean;
-	startTimer: any;
-
-	millisecondsChange: (milliseconds: any) => void;
-	secondsChange: (seconds: any) => void;
-	minutesChange: (minutes: any) => void;
-	hoursChange: (hours: any) => void;
-	runningChange: (isRunning: boolean) => void;
-	startTimerChange: (startTimer: any) => void;
-};
-
-export const Stopwatch: React.FC<StopwatchType> = (props) => {
-	let [mlsec, setMlsec] = useState(0);
-	let [sec, setSec] = useState(0);
-	let [min, setMin] = useState(0);
-	let [hour, setHour] = useState(0);
+const Stopwatch: React.FC<IStopwatch> = (
+	props
+): React.ReactElement<IStopwatch> => {
+	let [mlsec, setMlsec] = useState<number>(0);
+	let [sec, setSec] = useState<number>(0);
+	let [min, setMin] = useState<number>(0);
+	let [hour, setHour] = useState<number>(0);
+	let [intervalId, setIntervalId] = useState<number>(0);
 
 	const twoDigitNumber = (
 		number: number,
@@ -34,46 +22,46 @@ export const Stopwatch: React.FC<StopwatchType> = (props) => {
 
 	const onStartHandler = () => {
 		if (!props.isRunning) {
-			props.runningChange(true);
-			props.startTimerChange(
-				setInterval(() => {
-					//MILLISECONDS
-					setMlsec(++mlsec);
-					twoDigitNumber(mlsec, props.millisecondsChange);
-					if (mlsec === 99) {
-						mlsec = 0;
+			props.isRunningSwitcher(true);
+			const interval: number = window.setInterval(() => {
+				//MILLISECONDS
+				setMlsec(++mlsec);
+				twoDigitNumber(mlsec, props.millisecondsChange);
+				if (mlsec === 99) {
+					mlsec = 0;
 
-						//SECONDS
-						setSec(++sec);
-						twoDigitNumber(sec, props.secondsChange);
-						if (sec === 60) {
-							sec = 0;
-							props.secondsChange('0' + sec);
+					//SECONDS
+					setSec(++sec);
+					twoDigitNumber(sec, props.secondsChange);
+					if (sec === 60) {
+						sec = 0;
+						props.secondsChange('0' + sec);
 
-							// MINUTES
-							setMin(++min);
-							twoDigitNumber(min, props.minutesChange);
-							if (min === 60) {
-								min = 0;
-								props.minutesChange('0' + min);
+						// MINUTES
+						setMin(++min);
+						twoDigitNumber(min, props.minutesChange);
+						if (min === 60) {
+							min = 0;
+							props.minutesChange('0' + min);
 
-								// HOURS
-								setHour(++hour);
-								twoDigitNumber(hour, props.hoursChange);
-							}
+							// HOURS
+							setHour(++hour);
+							twoDigitNumber(hour, props.hoursChange);
 						}
 					}
-				}, 10)
-			);
+				}
+			}, 10);
+			setIntervalId(interval);
+			// );
 		} else {
-			clearInterval(props.startTimer);
-			props.runningChange(false);
+			clearInterval(intervalId);
+			props.isRunningSwitcher(false);
 		}
 	};
 
 	const onResetHandler = () => {
-		clearInterval(props.startTimer);
-		props.runningChange(false);
+		clearInterval(intervalId);
+		props.isRunningSwitcher(false);
 		setMlsec(0);
 		setSec(0);
 		setMin(0);
@@ -100,3 +88,5 @@ export const Stopwatch: React.FC<StopwatchType> = (props) => {
 		</div>
 	);
 };
+
+export default Stopwatch;

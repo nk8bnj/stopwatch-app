@@ -1,0 +1,102 @@
+@import '../../utils/functions';
+@import '../../utils/variables';
+
+.container {
+	display: flex;
+	justify-content: center;
+
+	.button {
+		color: var(--main-color);
+		align-items: center;
+		background-image: radial-gradient(
+			100% 100% at 100% 0,
+			#5adaff 0,
+			#5468ff 100%
+		);
+		border: none;
+		border-radius: 6px;
+		box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+			rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+			rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+		font-weight: 700;
+		cursor: pointer;
+		display: inline-flex;
+		width: vw(105);
+		height: vw(50);
+		justify-content: center;
+		overflow: hidden;
+		transition: box-shadow 0.15s, transform 0.15s;
+		touch-action: manipulation;
+		white-space: nowrap;
+		will-change: box-shadow, transform;
+		font-size: vw(18);
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+
+		&:hover {
+			box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+				rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+			transform: translateY(-2px);
+		}
+
+		&:active {
+			box-shadow: #3c4fe0 0 3px 7px inset;
+			transform: translateY(2px);
+		}
+	}
+
+	/* BUTTON PAUSE */
+	.buttonPause {
+		background-image: radial-gradient(
+			100% 100% at 100% 0,
+			#ec96f6 0,
+			#8454ff 100%
+		);
+
+		&:hover {
+			box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+				rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #7043e3 0 -3px 0 inset;
+			transform: translateY(-2px);
+		}
+
+		&:active {
+			box-shadow: #753ce0 0 3px 7px inset;
+			transform: translateY(2px);
+		}
+	}
+
+	/* BUTTON RESET */
+	.buttonReset {
+		background-image: radial-gradient(
+			100% 100% at 100% 0,
+			#ffffff 0,
+			#f3efef 100%
+		);
+		box-shadow: rgba(55, 48, 71, 0.163) 0 2px 4px,
+			rgba(53, 46, 68, 0.156) 0 7px 13px -3px,
+			rgba(77, 81, 108, 0.222) 0 -3px 0 inset;
+
+		&:hover {
+			box-shadow: rgba(64, 64, 64, 0.237) 0 4px 8px,
+				rgba(45, 35, 66, 0.194) 0 7px 13px -3px, #c8c7c7 0 -3px 0 inset;
+			transform: translateY(-2px);
+		}
+
+		&:active {
+			box-shadow: #c6c5c5 0 3px 7px inset;
+			transform: translateY(2px);
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		.button {
+			width: 75px;
+			height: 38px;
+			font-size: 14px;
+		}
+	}
+}

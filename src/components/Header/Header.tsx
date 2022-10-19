@@ -2,7 +2,7 @@ import styles from './Header.module.scss';
 import ReactLogo from '../../images/react-logo.svg';
 import ReduxLogo from '../../images/redux-logo.svg';
 
-export const Header = () => {
+const Header = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
@@ -17,3 +17,5 @@ export const Header = () => {
 		</div>
 	);
 };
+
+export default Header;

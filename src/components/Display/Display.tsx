@@ -1,66 +1,68 @@
-import styles from "./Display.module.css";
+import styles from './Display.module.scss';
 
-type DisplayType = {
-	hours: string;
-	minutes: string;
-	seconds: string;
-	milliseconds: string;
-};
+interface IDisplay {
+	hours: string | number;
+	minutes: string | number;
+	seconds: string | number;
+	milliseconds: string | number;
+}
 
-export const Display: React.FC<DisplayType> = (props) => {
+const Display: React.FC<IDisplay> = (props) => {
 	return (
-		<div className={styles.display}>
-			<div className={styles.displayNumbers}>
+		<div className={styles.container}>
+			<div className={styles.numbers}>
 				<div
 					className={
-						props.hours !== "00"
-							? styles.title + " " + styles.hours
+						props.hours !== '00'
+							? styles.title + ' ' + styles.hours
 							: styles.title
 					}
 				>
 					HOURS
 				</div>
-				<span className={styles.numbers}>{props.hours}</span>
+				<span>{props.hours}</span>
 			</div>
 			<div className={styles.dots}>:</div>
-			<div className={styles.displayNumbers}>
+			<div className={styles.numbers}>
 				<div
 					className={
-						props.minutes !== "00" || props.hours !== "00"
-							? styles.title + " " + styles.minutes
+						props.minutes !== '00' || props.hours !== '00'
+							? styles.title + ' ' + styles.minutes
 							: styles.title
 					}
 				>
 					MINUTES
 				</div>
-				<span className={styles.numbers}>{props.minutes}</span>
+				<span>{props.minutes}</span>
 			</div>
 			<div className={styles.dots}>:</div>
-			<div className={styles.displayNumbers}>
+			<div className={styles.numbers}>
 				<div
 					className={
-						props.seconds !== "00" || props.minutes !== "00"
-							? styles.title + " " + styles.seconds
+						props.seconds !== '00' || props.minutes !== '00'
+							? styles.title + ' ' + styles.seconds
 							: styles.title
 					}
 				>
 					SECONDS
 				</div>
-				<span className={styles.numbers}>{props.seconds}</span>
+				<span>{props.seconds}</span>
 			</div>
 			<div className={styles.dots}>:</div>
-			<div className={styles.displayNumbers}>
+			<div className={styles.numbers}>
 				<div
 					className={
-						props.milliseconds !== "00"
-							? styles.title + " " + styles.milliseconds
+						props.milliseconds !== '00'
+							? styles.title + ' ' + styles.milliseconds
 							: styles.title
 					}
 				>
 					MILLISECONDS
 				</div>
-				<span className={styles.numbers}>{props.milliseconds}</span>
+				<span>{props.milliseconds}</span>
 			</div>
 		</div>
 	);
 };
+
+export default Display;

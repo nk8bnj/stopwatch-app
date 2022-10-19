@@ -1,5 +1,5 @@
-import { stopwatchReducer } from "./../Reducer/stopwatchReducer";
-import { configureStore } from "@reduxjs/toolkit";
+import { stopwatchReducer } from './../Reducer/stopwatchReducer';
+import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
 	reducer: {
@@ -8,4 +8,3 @@ export const store = configureStore({
 });
 
 export type StateType = ReturnType<typeof store.getState>;
-export type DispatchType = typeof store.dispatch;
