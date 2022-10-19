@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/stopwatch-app/static/css/main.acf05069.css",
-    "main.js": "/stopwatch-app/static/js/main.8a00c4a9.js",
+    "main.css": "/stopwatch-app/static/css/main.69909775.css",
+    "main.js": "/stopwatch-app/static/js/main.597124e6.js",
     "static/js/787.a8e04a92.chunk.js": "/stopwatch-app/static/js/787.a8e04a92.chunk.js",
     "static/media/react-logo.svg": "/stopwatch-app/static/media/react-logo.0cc978f43ea437de003e85712225e83b.svg",
     "static/media/redux-logo.svg": "/stopwatch-app/static/media/redux-logo.0093fdee00ecf5136c9f7660ebe5e197.svg",
@@ -9,12 +9,12 @@
     "static/media/linkedin.svg": "/stopwatch-app/static/media/linkedin.dd5412fbe72bdedc4c42dec34e0b421c.svg",
     "static/media/github.svg": "/stopwatch-app/static/media/github.db432c59c1ea8141b12c7b23462c1f05.svg",
     "static/media/gmail.svg": "/stopwatch-app/static/media/gmail.064eff0894a8e932446cfc3188335be6.svg",
-    "main.acf05069.css.map": "/stopwatch-app/static/css/main.acf05069.css.map",
-    "main.8a00c4a9.js.map": "/stopwatch-app/static/js/main.8a00c4a9.js.map",
+    "main.69909775.css.map": "/stopwatch-app/static/css/main.69909775.css.map",
+    "main.597124e6.js.map": "/stopwatch-app/static/js/main.597124e6.js.map",
     "787.a8e04a92.chunk.js.map": "/stopwatch-app/static/js/787.a8e04a92.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.acf05069.css",
-    "static/js/main.8a00c4a9.js"
+    "static/css/main.69909775.css",
+    "static/js/main.597124e6.js"
   ]
 }
