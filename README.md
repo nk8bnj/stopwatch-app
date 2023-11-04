@@ -1,3 +1,1 @@
-# Try out Stopwatch App
-
-[Click here](https://8bitnikita.github.io/stopwatch-app/) to open the application.
+Stopwatch application [Live Preview](https://nk8bnj.github.io/stopwatch-app/).
